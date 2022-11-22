@@ -27,11 +27,11 @@ public class JdbcExample implements DriverAction{
 			
 			DriverManager.registerDriver(driver, da);
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/oct2022","root","Passw0rd!");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila","root","Passw0rd!");
 			
 			Statement stmt = con.createStatement();
 			
-			ResultSet rs = stmt.executeQuery("SELECT * FROM emp");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM actor");
 			while(rs.next()) {
 				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
 			}
